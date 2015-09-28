@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Akademik
+        psr4_prefix: Akademik
+        src_path: app
