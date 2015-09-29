@@ -23,7 +23,7 @@
             "database"
         ],
         "psr-4": {
-            "Akademik\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

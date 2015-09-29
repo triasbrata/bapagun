@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => Akademik\User::class,
+        'model'  => App\User::class,
         'key' => '',
         'secret' => '',
     ],

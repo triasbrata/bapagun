@@ -141,9 +141,9 @@ return [
         /*
          * Application Service Providers...
          */
-        Akademik\Providers\AppServiceProvider::class,
-        Akademik\Providers\EventServiceProvider::class,
-        Akademik\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

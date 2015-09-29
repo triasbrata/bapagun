@@ -1,6 +1,6 @@
 <?php
 
-namespace Akademik\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

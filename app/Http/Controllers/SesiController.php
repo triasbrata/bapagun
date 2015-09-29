@@ -1,10 +1,10 @@
 <?php
 
-namespace Akademik\Http\Controllers\sesi;
+namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Akademik\Http\Controllers\Controller;
-use Akademik\User;
-use Akademik\Http\Requests\SesiControllerRequest;
+use App\Http\Controllers\Controller;
+use App\User;
+use App\Http\Requests\SesiControllerRequest;
 use Auth;
 use Cache;
 use Session;
