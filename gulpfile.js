@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+var vendorLoadPath =   './'
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,10 @@ elixir(function(mix) {
          */
         'init.js',
     ]);
-    mix.styles([
-        'materialize.min.css',
-        'morris.css',
-        'owl.carousel.css',
-        'style.css',
+    mix.sass([
+        '../vendor/materialize-src/sass/materialize.scss',
+        'style.scss'
     ]);
+    mix.copy('resources/assets/imgs','public/imgs');
+    
 });
