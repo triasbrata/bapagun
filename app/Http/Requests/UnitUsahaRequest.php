@@ -24,13 +24,14 @@ class UnitUsahaRequest extends Request
     public function rules()
     {
         return [
-            'nama_usaha'=>'required',
-            'keterangan'=>'required',
-            'tipe_program'=>'required',
-            'telp'=>'digits:7',
+            'nama'=>'required',
+            'telp'=>'digits_between:11,13',
             'email'=>'email',
+            'alamat'=>'required',
+            // 'kordinat'=>'required',
+            'foto'=>'required',
             'personal_no_ktp'=>'required',
-            'personal_name'=>'required',
+            'personal_nama'=>'required',
             'personal_jenis_kelamin'=>'required',
             'personal_tanggal_lahir'=>'required',
             'personal_tempat_lahir'=>'required',

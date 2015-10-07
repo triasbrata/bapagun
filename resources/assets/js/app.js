@@ -98,7 +98,21 @@ function enableDatePicker () {
 		return;
 	}
 	$('.txt-datepicker').datepicker({
+		language:'id',
 		format: "yyyy-mm-dd"
+	});
+	$('.bulan-picker').datepicker({
+			language:'id',
+			format:"MM",
+			viewMode:1,
+			minViewMode: 1,
+			maxViewMode: 1
+	});
+	$('.tahun-picker').datepicker({
+			language:'id',
+			format:"yyyy",
+			viewMode:"years",
+			minViewMode: "years"
 	});
 }
 function enableInputMask () {	 

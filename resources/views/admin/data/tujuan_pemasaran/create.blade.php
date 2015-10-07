@@ -1,7 +1,6 @@
 @extends('main')
-@section('title','Tambah Unit Kegiatan Masyarakat')
 @section('content')
-{!! Form::open(['route'=>$store, 'method'=>'POST','class'=>'form','files'=>true]) !!}
+{!! Form::open(['route'=>$store, 'method'=>'POST','class'=>'form']) !!}
 
 <div class="card card-underline">
 	<div class="card-head">
@@ -12,13 +11,20 @@
 			</div>
 		</div>
 	</div>
-	<div  class="card-body">
-		@include($form)
-	</div>
+	
+			<div  class="card-body">
+
+				@include($form)
+				
+			</div>
+		
+
+
+
 	<div class="card-actionbar">
 		<div class="card-actionbar-row">
-			{!! Form::button('Ulangi',['class'=>'btn btn-flat btn-accent ink-reaction','type'=>'reset']) !!}
-			{!! Form::button('Simpan',['class'=>'btn btn-flat btn-primary ink-reaction','type'=>'submit']) !!}
+			{!! Form::button('Reset',['class'=>'btn btn-flat btn-accent ink-reaction','type'=>'reset']) !!}
+			{!! Form::button('Submit',['class'=>'btn btn-flat btn-primary ink-reaction','type'=>'submit']) !!}
 		</div>
 	</div>
 </div>

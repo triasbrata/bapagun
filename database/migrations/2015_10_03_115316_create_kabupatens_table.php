@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKecamatansTable extends Migration
+class CreateKabupatensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateKecamatansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kecamatans', function (Blueprint $table) {
-            $table->string('id',10);
-            $table->string('kabupaten_id',10);
-            $table->foreign('kabupaten_id')->reference('id')->on('kabupatens')->onUpdate('cascade')->onDelete('cascade');
+        Schema::create('kabupatens', function (Blueprint $table) {
+             $table->string('id',10);
+            $table->string('provinsi_id',10);
+            $table->foreign('provinsi_id')->references('id')->on('provinsis')->onUpdate('cascade')->onDelete('cascade');
             $table->string('label');
             $table->primary('id');
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateKecamatansTable extends Migration
      */
     public function down()
     {
-        Schema::drop('kecamatans');
+        Schema::drop('kabupatens');
     }
 }

@@ -19,6 +19,7 @@ elixir(function(mix) {
         'vendor/raphael/raphael-min.js',
         'vendor/morris.js/morris.min.js',
         'vendor/moment/moment.min.js',
+        'vendor/bootstrap-datepicker/bootstrap-datepicker.id.js',
         'vendor/bootstrap-datepicker/bootstrap-datepicker.js',
         'vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js',
         'vendor/typeahead/bloodhound.min.js',
@@ -46,6 +47,7 @@ elixir(function(mix) {
         'vendor/toastr/toastr.js',
         'vendor/DataTables/jquery.dataTables.min.js',
         'vendor/jasny-bootstrap/jasny-bootstrap.min.js',
+        'vendor/gmaps/gmaps.js',
       
         /*core js*/
         'core/source/App.min.js',

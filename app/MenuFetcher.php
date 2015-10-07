@@ -16,13 +16,20 @@ class MenuFetcher
 			'admin'=>[
 					[ 'route'=>'landing', 'name'=>'Dashboard Admin', 'icon'=> 'fa fa-home'],
 					[ 'route'=>'unitkegiatan.index', 'name'=>'Unit Kegiatan', 'icon'=> 'fa fa-database'],
-					[ 'route'=>'landing', 'name'=>'Dashboard Admin', 'icon'=> 'fa fa-home'],
+					[ 'route'=>'kondisiusaha.index', 'name'=>'Unit Kegiatan', 'icon'=> 'fa fa-line-chart'],
+					[ 'route'=>'data.', 'name'=>'Data Utama', 'icon'=> 'fa fa-tags','inGroup'=>[
+						[ 'route'=>'tujuan_pemasaran.index', 'name'=>'Tujuan Pemasaran', 'icon'=> 'fa fa-tag'],
+						[ 'route'=>'tempat_pemasaran.index', 'name'=>'Tempat Pemasaran', 'icon'=> 'fa fa-tag'],
+						[ 'route'=>'bahan_baku.index', 'name'=>'Bahan Baku', 'icon'=> 'fa fa-tag'],
+						[ 'route'=>'permodalan.index', 'name'=>'Permodalan', 'icon'=> 'fa fa-tag'],
+						[ 'route'=>'manajement.index', 'name'=>'Manajement', 'icon'=> 'fa fa-tag'],
+					]],
 					[ 'route'=>'landing', 'name'=>'Dashboard Admin', 'icon'=> 'fa fa-home'],
 			]
 		];
 		return $menu[$level];
 	}
-	public function make($menu,$role = null,$prefix = null)
+	public function make($menu,$role = null,$prefix = null,$child = false)
 	{
 		$o = "";
 		$lists = is_object($menu) ? $menu->lists($role) : $menu;
@@ -38,7 +45,7 @@ class MenuFetcher
 						$o.="<ul>";
 						$oldPrefix = $prefix;
 						$prefix = (!is_null($prefix)) ? $prefix.'.'.$list['route'] : $list['route'];
-						$this->make($inGroup,$role,$prefix);
+						$o.=$this->make($inGroup,$role,$prefix,true);
 						$prefix = $oldPrefix;
 						$o.="</ul>";
 					$o.="</li>";
@@ -48,20 +55,16 @@ class MenuFetcher
 					$routeName.= "{$list['route']}";
 					$link = route($routeName);
 					$o.="<li><a href='$link' >";
-					$o.= isset($list['icon']) ? "<div class='gui-icon'><i class='{$list['icon']}'></i></div>" : ""; 
-					$o.="<span class='title'>{$list['name']}</span>";
+					if($child){
+						$ic= isset($list['icon']) ? "<i class='{$list['icon']}'></i>" : ""; 
+						$o.="<span class='title'>$ic {$list['name']}</span>";
+					}else{
+						$ic= isset($list['icon']) ? "<div class='gui-icon'><i class='{$list['icon']}'></i></div>" : ""; 
+						$o.="$ic<span class='title'> {$list['name']}</span>";
+
+					}
 					$o.="</a></li>";
 				}
-			}else{
-				$routeName = $role;
-				$routeName.= !is_null($prefix) ? ".$prefix":".";
-				$routeName.= "{$list['route']}";
-				$link = route($routeName);
-				$o.="<li><a href='$link' >";
-				$o.= isset($list['icon']) ? "<div class='gui-icon'><i class='{$list['icon']}'></i></div>" : ""; 
-				$o.="<span class='title'>{$list['name']}</span>";
-				$o.="</a></li>";
-				continue;
 			}
 		}
 		return $o;

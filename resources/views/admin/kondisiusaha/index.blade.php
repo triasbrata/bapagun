@@ -34,7 +34,7 @@
 									<td>{{$x++}}</td>
 									<td>{{$usaha->nama_usaha}}</td>
 									<td>{{$usaha->personal->name}}</td>
-									<td>{{"(0541)-{$usaha->telp}"}}</td>
+									<td>{{"{$usaha->telp}"}}</td>
 									<td>{{$tipeProgram->make($usaha->tipe_program)}}</td>
 									<td>
 										<span></span>	

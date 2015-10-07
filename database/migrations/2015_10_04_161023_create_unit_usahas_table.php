@@ -15,19 +15,18 @@ class CreateUnitUsahasTable extends Migration
         Schema::create('unit_usahas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama',50);
-            $table->string('keterangan',255);
             $table->string('telp',13);
             $table->text('keterangan');
             $table->string('alamat');
             $table->string('kordinat',35);
-            $table->string('foto',35);
+            $table->string('foto',40);
             $table->string('email',35);
-            $table->integer('village_id')->unsigned();
-            $table->foreign('village_id')->references('id')->on('villages');
-            $table->integer('district_id')->unsigned();
-            $table->foreign('district_id')->references('id')->on('districts');
-            $table->integer('regency_id')->unsigned();
-            $table->foreign('regency_id')->references('id')->on('regencys');
+            $table->string('desa_id',10);
+            $table->foreign('desa_id')->references('id')->on('desas');
+            $table->string('kecamatan_id',10);
+            $table->foreign('kecamatan_id')->references('id')->on('kecamatans');
+            $table->string('kabupaten_id',10);
+            $table->foreign('kabupaten_id')->references('id')->on('kabupatens');
             $table->timestamps();
         });
     }

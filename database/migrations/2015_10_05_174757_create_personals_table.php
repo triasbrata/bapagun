@@ -15,7 +15,7 @@ class CreatePersonalsTable extends Migration
         Schema::create('personals', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('unit_usaha_id')->unsigned();
-            $table->foreign('unit_usaha_id')->references('id')->on('unit_usahas')->onDelete('restrict')->onUpdate('cascade');
+            $table->foreign('unit_usaha_id')->references('id')->on('unit_usahas')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama',50);
             $table->string('no_ktp',50);
             $table->enum('jenis_kelamin',["m","f"]);
