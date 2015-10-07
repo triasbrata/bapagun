@@ -3,13 +3,12 @@
 @section('base-content')
 	<section class="container login">
 	<div class="row">
-		<div class="card no-padding col offset-m4 m4 s12 ">
-			<div class="card-image">
-			<img src="{{ asset('imgs/bg-login.jpg') }}" width="100%" alt="">
-			<span class="card-title">Portal K-UKMK</span>
+		<div class="card no-padding col-md-offset-4 col-md-4 ">
+			<div class="card-head no-padding">
+				<img src="{{ asset('imgs/bg-login.jpg') }}" width="100%" alt="">
+				<span class="card-title">Portal K-UKMK</span>
 			</div>
-			<span class="card-title">Login System</span>
-			<div class="card-content">
+			<div class="card-body">
 				@yield('form')
 			</div>
 		</div>

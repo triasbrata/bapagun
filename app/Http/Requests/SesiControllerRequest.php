@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Auth;
 
 class SesiControllerRequest extends Request
 {
@@ -11,9 +12,14 @@ class SesiControllerRequest extends Request
      *
      * @return bool
      */
+    
     public function authorize()
     {
-        return \Auth::guest();
+        if(Auth::guest()){
+            return true;
+        }
+        return redirect()->route(Auth::user()->level.".landing");
+
     }
 
     /**

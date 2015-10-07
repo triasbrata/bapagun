@@ -16,12 +16,12 @@ class CreatePersonalsTable extends Migration
             $table->increments('id');
             $table->integer('unit_usaha_id')->unsigned();
             $table->foreign('unit_usaha_id')->references('id')->on('unit_usahas')->onDelete('restrict')->onUpdate('cascade');
-            $table->string('name',50);
+            $table->string('nama',50);
             $table->string('no_ktp',50);
-            $table->enum('jenis_kelamin',["m","w"]);
+            $table->enum('jenis_kelamin',["m","f"]);
             $table->date('tanggal_lahir');
             $table->string('tempat_lahir');
-            $table->enum('Agama'['islam','katolik','protestant','hindu','budha','kong wu chu']);
+            $table->enum('agama',['islam','katolik','protestant','hindu','budha','kong wu chu']);
             $table->timestamps();
         });
     }

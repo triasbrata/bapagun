@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $guarded = ['id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -35,13 +35,5 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public static function getLogin($username, $password)
     {
          return self::where('username',$username)->where('password',$password)->first();
-    }
-    public function pegawai()
-    {
-        return $this->hasOne(Pegawai::class);
-    }
-    public function siswa()
-    {
-        return $this->hasOne(Siswa::class);
     }
 }

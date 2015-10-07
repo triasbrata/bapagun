@@ -11,19 +11,9 @@ use Session;
 
 class SesiController extends Controller
 {
-    public function __construct()
+    public function redirectByLevel($level)
     {
-    }
-
-    private function redirectTo($level)
-    {
-        if ($level == 'pegawai') {
-            return redirect()->route('pegawai.do');
-        } elseif ($level == 'siswa') {
-            return redirect()->route('siswa.landing');
-        } else {
-            abort(404,"Undefined User Level Access");
-        }
+        return redirect()->route("$level.landing");
     }
     /**
      * make login view
@@ -44,8 +34,8 @@ class SesiController extends Controller
         $user = User::getLogin($request->input('username'),$request->input('password'));
         if (! is_null($user)) {
             Auth::login($user);
-            $level = Auth::user()->as;
-            return $this->redirectTo($level);
+            $level = Auth::user()->level;
+            return $this->redirectByLevel($level);
         }else{
             return redirect()->back()->withInput()->withErrors("Username dan password tidak terdaftar");
         }
@@ -59,26 +49,5 @@ class SesiController extends Controller
         Auth::logout();
         return redirect()->route('sesi.login.form');
     }
-    public function pegawaiRole()
-    {
-        
-        if(is_null(Auth::user()->pegawai)){
-            return $this->logout()->withErrors('Username tidak terdaftar sebagai pegawai');    
-        }
-        if( Auth::user()->pegawai->tugas()->count() < 1){
-            // force user to logout
-           return $this->logout()->withErrors('Pegawai tidak memiliki akses terhadap sistem');
-        }
-        // if(Auth::user()->pegawai->tugas()->count() == 1){
-        //     return redirect()->route(strtolower(str_replace(' ','',Auth::user()->pegawai->tugas->first()->role)).".landing");
-        // }
-        $employerDo = Auth::user()->pegawai->tugas;
-        return $this->view('sesi.do',compact('employerDo'));        
-    }
-    public function pegawaiRoleSelect(Request $r)
-    {
-        $role  = $r->input('role');
-        Session::put('EmployerRole',$role);
-        return redirect()->route("$role.landing");
-    }
+    
 }

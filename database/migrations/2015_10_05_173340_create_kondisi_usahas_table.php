@@ -20,9 +20,11 @@ class CreateKondisiUsahasTable extends Migration
             $table->string('bulan',2);
             $table->integer('aset');
             $table->integer('omset');
-            $table->enum('bentuk_pemodalan',['mandiri','keluarga','koperasi','hibah','bank','lainnya']);
-            $table->string('management_usaha');
-            $table->text('permasalahan');
+            $table->string('pirt',50);
+            $table->string('mn',50);
+            $table->string('halal',50);
+            $table->string('iso',50);
+            $table->string('lain_lain',50);
             $table->timestamps();
         });
     }
