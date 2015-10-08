@@ -19,8 +19,8 @@ elixir(function(mix) {
         'vendor/raphael/raphael-min.js',
         'vendor/morris.js/morris.min.js',
         'vendor/moment/moment.min.js',
-        'vendor/bootstrap-datepicker/bootstrap-datepicker.id.js',
         'vendor/bootstrap-datepicker/bootstrap-datepicker.js',
+        'vendor/bootstrap-datepicker/locales/bootstrap-datepicker.id.js',
         'vendor/bootstrap-tagsinput/bootstrap-tagsinput.min.js',
         'vendor/typeahead/bloodhound.min.js',
         'vendor/inputmask/jquery.inputmask.bundle.min.js',
@@ -47,9 +47,9 @@ elixir(function(mix) {
         'vendor/toastr/toastr.js',
         'vendor/DataTables/jquery.dataTables.min.js',
         'vendor/jasny-bootstrap/jasny-bootstrap.min.js',
-        'vendor/gmaps/gmaps.js',
       
         /*core js*/
+        // 'vendor/gmaps/gmaps.js',
         'core/source/App.min.js',
         'core/source/AppCard.js',
         'core/source/AppForm.js',
@@ -61,12 +61,15 @@ elixir(function(mix) {
          */
         'app.js',
         ]);
+
+    mix.scripts(['vendor/select2/select2.min.js'],'public/js/select2.js')
+    mix.less('vendor/select2/select2.less','public/css/select2.css');
     mix.scripts(['ajax_rombel.js'],'public/js/ajax_rombel.js')
     mix.scripts([
         'vendor/utils/html5shiv.js',
         'vendor/utils/respond.min.js',
         ],'public/js/ie.js');
-    mix.copy('resources/assets/vendor/roboto-fontface/fonts','public/vendor/roboto-fontface/fonts');
-    mix.copy('resources/assets/vendor/font-awesome-4.3.0/fonts','public/vendor/font-awesome-4.3.0/fonts');
-    mix.copy('resources/assets/vendor/material-design-iconic-font/fonts','public/vendor/material-design-iconic-font/fonts');
+    mix.copy('resources/assets/vendor/roboto-fontface/fonts','public/fonts/roboto-fontface/fonts');
+    mix.copy('resources/assets/vendor/font-awesome-4.3.0/fonts','public/fonts/font-awesome-4.3.0/fonts');
+    mix.copy('resources/assets/vendor/material-design-iconic-font/fonts','public/fonts/material-design-iconic-font/fonts');
 });

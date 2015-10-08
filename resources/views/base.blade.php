@@ -8,10 +8,14 @@
 	<meta name="keywords" content="Information,System,Society">
 	<meta name="description" content="Society unit">
 	<!-- BEGIN STYLESHEETS -->
-	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	{{--  <script src="http://maps.google.com/maps/api/js?sensor=true"></script> --}}
 	<link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}" />
 	<script src="{{ asset('js/all.js') }}"></script>
-	
+	<style>
+	.select-overflow{
+		overflow-y:scroll"
+	}
+	</style>
 </head>
 <body>
 	@include('incl/message')

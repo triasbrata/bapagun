@@ -19,3 +19,9 @@ Route::group(['prefix'=>'admin','middleware'=>'UAC:admin','namespace'=>'Admin'],
 		]);
 	});
 });
+Route::group(['namespace'=>'Umum'],function ()
+{
+	Route::get('/',['as'=>'umum.awal','uses'=>'IndexController@awal']);
+	Route::post('/',['as'=>'umum.cari','uses'=>'IndexController@cari']);
+	Route::get('/profil/{id}',['as'=>'umum.profil','uses'=>'IndexController@profil']);
+});

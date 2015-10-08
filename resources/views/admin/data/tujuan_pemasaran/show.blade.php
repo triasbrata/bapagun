@@ -18,16 +18,8 @@
 					<li class="tile">
 						<div class="tile-content ink-reaction">
 							<div class="tile-text">
-								<span>Nama Hobi</span>
+								<span>Tujuan Pemasaran</span>
 								<small>{{$data->label}}</small>
-							</div>
-						</div>
-					</li>
-					<li class="tile">
-						<div class="tile-content ink-reaction">
-							<div class="tile-text">
-								<span>Jenis Hobi</span>
-								<small>{{$data->jenis_hobi}}</small>
 							</div>
 						</div>
 					</li>

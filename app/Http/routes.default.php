@@ -1,8 +1,4 @@
 <?php 
-
-Route::get('/', function () {
-	return redirect()->route('sesi.login.form');
-});
 /**
  *  bagian login system
  */

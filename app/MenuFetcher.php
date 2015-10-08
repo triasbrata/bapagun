@@ -16,7 +16,7 @@ class MenuFetcher
 			'admin'=>[
 					[ 'route'=>'landing', 'name'=>'Dashboard Admin', 'icon'=> 'fa fa-home'],
 					[ 'route'=>'unitkegiatan.index', 'name'=>'Unit Kegiatan', 'icon'=> 'fa fa-database'],
-					[ 'route'=>'kondisiusaha.index', 'name'=>'Unit Kegiatan', 'icon'=> 'fa fa-line-chart'],
+					[ 'route'=>'kondisiusaha.index', 'name'=>'Kondisi Usaha', 'icon'=> 'fa fa-line-chart'],
 					[ 'route'=>'data.', 'name'=>'Data Utama', 'icon'=> 'fa fa-tags','inGroup'=>[
 						[ 'route'=>'tujuan_pemasaran.index', 'name'=>'Tujuan Pemasaran', 'icon'=> 'fa fa-tag'],
 						[ 'route'=>'tempat_pemasaran.index', 'name'=>'Tempat Pemasaran', 'icon'=> 'fa fa-tag'],
@@ -24,7 +24,6 @@ class MenuFetcher
 						[ 'route'=>'permodalan.index', 'name'=>'Permodalan', 'icon'=> 'fa fa-tag'],
 						[ 'route'=>'manajement.index', 'name'=>'Manajement', 'icon'=> 'fa fa-tag'],
 					]],
-					[ 'route'=>'landing', 'name'=>'Dashboard Admin', 'icon'=> 'fa fa-home'],
 			]
 		];
 		return $menu[$level];

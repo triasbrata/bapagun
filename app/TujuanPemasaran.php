@@ -9,7 +9,7 @@ class TujuanPemasaran extends Model
     	protected $guarded = ['id'];
     	public function kondisi_usaha()
     	{
-    		$this->hasMany(KondisiUsaha::class);
+    		$this->belongsToMany(KondisiUsaha::class,'kondisi_tujuan_pem');
     	}
     
 }

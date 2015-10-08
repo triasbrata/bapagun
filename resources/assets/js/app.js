@@ -103,7 +103,7 @@ function enableDatePicker () {
 	});
 	$('.bulan-picker').datepicker({
 			language:'id',
-			format:"MM",
+			format:"mm",
 			viewMode:1,
 			minViewMode: 1,
 			maxViewMode: 1

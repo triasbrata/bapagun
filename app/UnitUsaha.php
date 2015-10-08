@@ -35,4 +35,17 @@ class UnitUsaha extends Model
         {
             return $this->belongsTo(Kecamatan::class);
         }
+        public function kondisi()
+        {
+            return $this->hasMany(KondisiUsaha::class,"unit_usaha_id");
+        }
+        public function getLastOmset()
+        {
+            return $this->kondisi()->last()->omset;
+        }
+        public function getLastAset()
+        {
+            return $this->with('kondisi');
+            $kondisi = $this->kondisi()->me();
+        }
 }

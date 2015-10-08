@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Auth;
 
 class KondisiUsahaRequest extends Request
 {
@@ -13,7 +14,7 @@ class KondisiUsahaRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return  Auth::check();
     }
 
     /**
@@ -24,7 +25,21 @@ class KondisiUsahaRequest extends Request
     public function rules()
     {
         return [
-            //
+            'unit_usaha_id' => 'required',
+            'tahun' => 'required',
+            'bulan' => 'required',
+            'aset' => 'required',
+            'omset' => 'required',
+            'pirt' => 'required',
+            'mn' => 'required',
+            'halal' => 'required',
+            'iso' => 'required',
+            'lain_lain' => 'required',
+            'tujuan_pemasaran' => 'required',
+            'tempat_pemasaran' => 'required',
+            'bahan_baku' => 'required',
+            'permodalan' => 'required',
+            'manajement' => 'required',
         ];
     }
 }

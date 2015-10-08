@@ -14,8 +14,6 @@ class CreateTenagaKerjasTable extends Migration
     {
         Schema::create('tenaga_kerjas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('unit_usaha_id')->unsigned();
-            $table->foreign('unit_usaha_id')->references('id')->on('unit_usahas')->onDelete('restrict')->onUpdate('cascade');
             $table->integer('pekerja_pria');
             $table->integer('pekerja_wanita');
             $table->integer('rata_rata_gaji');
