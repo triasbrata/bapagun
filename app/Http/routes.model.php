@@ -7,3 +7,4 @@ Route::model('tempat_pemasaran',\App\TempatPemasaran::class);
 Route::model('bahan_baku',\App\BahanBaku::class);
 Route::model('permodalan',\App\Permodalan::class);
 Route::model('manajement',\App\Manajement::class);
+Route::model('produk',\App\UnitUsaha::class);

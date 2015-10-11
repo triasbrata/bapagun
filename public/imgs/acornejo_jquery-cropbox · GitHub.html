@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://github.com/acornejo/jquery-cropbox -->
+<html lang="en" class=" is-copy-enabled"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+    
+    
+    <title>acornejo/jquery-cropbox · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="acornejo/jquery-cropbox" name="twitter:title"><meta content="jquery-cropbox - jQuery Cropbox plugin" name="twitter:description"><meta content="https://avatars0.githubusercontent.com/u/83786?v=3&amp;s=400" name="twitter:image:src">
+      <meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="https://avatars0.githubusercontent.com/u/83786?v=3&amp;s=400" property="og:image"><meta content="acornejo/jquery-cropbox" property="og:title"><meta content="https://github.com/acornejo/jquery-cropbox" property="og:url"><meta content="jquery-cropbox - jQuery Cropbox plugin" property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="github" name="octolytics-app-id"><meta content="2452E1A3:7D29:742B5EC:56194527" name="octolytics-dimension-request_id">
+
+<meta content="Rails, view, files#disambiguate" data-pjax-transient="true" name="analytics-event">
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+    <meta class="js-ga-set" name="dimension4" content="Current repo nav">
+
+
+
+
+    <meta name="is-dotcom" content="true">
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+      <!-- </textarea> --><!-- '"` --><meta content="authenticity_token" name="csrf-param">
+<meta content="ixUdD+GUmaZ2rPZeFHggy9l/E4Pc57RW5ZMN0Rp89qF6HhW1NYo4jO6GXNsCpkKt45ATx4+WkCrcrXwi2UoMdA==" name="csrf-token">
+    
+
+    <link crossorigin="anonymous" href="./acornejo_jquery-cropbox · GitHub_files/github-1e83e1a4f582ee9c02f5d1486c0175478a1d34f36f54c17e1d7b51de4bda3782.css" integrity="sha256-HoPhpPWC7pwC9dFIbAF1R4odNPNvVMF+HXtR3kvaN4I=" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="./acornejo_jquery-cropbox · GitHub_files/github2-bed57ffc09d9dc51b56b011c61d551407cc16a668491bcfb4f5d89bbad0067d8.css" integrity="sha256-vtV//AnZ3FG1awEcYdVRQHzBamaEkbz7T12Ju60AZ9g=" media="all" rel="stylesheet">
+    
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="1ca442766839cd4996a51645a041611a">
+
+      
+  <meta name="description" content="jquery-cropbox - jQuery Cropbox plugin">
+  <meta name="go-import" content="github.com/acornejo/jquery-cropbox git https://github.com/acornejo/jquery-cropbox.git">
+
+  <meta content="83786" name="octolytics-dimension-user_id"><meta content="acornejo" name="octolytics-dimension-user_login"><meta content="14833260" name="octolytics-dimension-repository_id"><meta content="acornejo/jquery-cropbox" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="14833260" name="octolytics-dimension-repository_network_root_id"><meta content="acornejo/jquery-cropbox" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/acornejo/jquery-cropbox/commits/master.atom" rel="alternate" title="Recent Commits to jquery-cropbox:master" type="application/atom+xml">
+
+  <script type="text/javascript" async="" src="./acornejo_jquery-cropbox · GitHub_files/api.js"></script></head>
+
+
+  <body class="logged_out   env-production linux vis-public">
+    <a href="https://github.com/acornejo/jquery-cropbox#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+      
+      <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="btn btn-primary" href="https://github.com/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="btn" href="https://github.com/login?return_to=%2Facornejo%2Fjquery-cropbox" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/acornejo/jquery-cropbox/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/acornejo/jquery-cropbox/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text" class="js-site-search-focus js-site-search-field is-clearable chromeless-input" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-global-scope-placeholder="Search GitHub" data-repo-scope-placeholder="Search" tabindex="1" autocapitalize="off">
+  </label>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://github.com/pricing" data-ga-click="(Logged out) Header, go to pricing, text:pricing">Pricing</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+    <div role="main" class="main-content">
+        <div itemscope="" itemtype="http://schema.org/WebPage">
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+
+      <div class="container">
+
+        <div class="clearfix">
+          
+
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Facornejo%2Fjquery-cropbox" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <span class="octicon octicon-eye"></span>
+    Watch
+  </a>
+  <a class="social-count" href="https://github.com/acornejo/jquery-cropbox/watchers">
+    19
+  </a>
+
+  </li>
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Facornejo%2Fjquery-cropbox" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="https://github.com/acornejo/jquery-cropbox/stargazers">
+      276
+    </a>
+
+  </li>
+
+  <li>
+      <a href="https://github.com/login?return_to=%2Facornejo%2Fjquery-cropbox" class="btn btn-sm btn-with-count tooltipped tooltipped-n" aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+
+    <a href="https://github.com/acornejo/jquery-cropbox/network" class="social-count">
+      84
+    </a>
+  </li>
+</ul>
+
+          <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public ">
+  <span class="mega-octicon octicon-repo"></span>
+  <span class="author"><a href="https://github.com/acornejo" class="url fn" itemprop="url" rel="author"><span itemprop="title">acornejo</span></a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong><a href="./acornejo_jquery-cropbox · GitHub_files/acornejo_jquery-cropbox · GitHub.html" data-pjax="#js-repo-pjax-container">jquery-cropbox</a></strong>
+
+  <span class="page-context-loader">
+    <img alt="" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+  </span>
+
+</h1>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline with-full-navigation">
+        <div class="repository-sidebar clearfix">
+          
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders" role="navigation" data-pjax="#js-repo-pjax-container" data-issue-count-url="/acornejo/jquery-cropbox/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="./acornejo_jquery-cropbox · GitHub_files/acornejo_jquery-cropbox · GitHub.html" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /acornejo/jquery-cropbox">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="https://github.com/acornejo/jquery-cropbox/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /acornejo/jquery-cropbox/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="counter">16</span>
+
+          <img alt="" class="mini-loader" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
+      <a href="https://github.com/acornejo/jquery-cropbox/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /acornejo/jquery-cropbox/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
+          <span class="counter">2</span>
+
+          <img alt="" class="mini-loader" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="https://github.com/acornejo/jquery-cropbox/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /acornejo/jquery-cropbox/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="https://github.com/acornejo/jquery-cropbox/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /acornejo/jquery-cropbox/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+            <div class="only-with-full-nav">
+                
+<div class="js-clone-url clone-url open" data-protocol-type="http">
+  <h3 class="text-small"><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini text-small input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/acornejo/jquery-cropbox.git" readonly="readonly" aria-label="HTTPS clone URL">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="js-clone-url clone-url " data-protocol-type="subversion">
+  <h3 class="text-small"><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini text-small input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/acornejo/jquery-cropbox" readonly="readonly" aria-label="Subversion checkout URL">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<div class="clone-options text-small">You can clone with
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/users/set_protocol?protocol_selector=http&protocol_type=clone" class="inline-form js-clone-selector-form " data-form-nonce="1eda1b6a10fcec27dce738ceb26e5071dc3e9d2d" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="W1vV6JV2V4omRpezGt7SF05UZJ0v9/Nn/wZWnUE2VHIhAKeUunf7m15NyFZ70krXl8GZePDY3NFEnuyncHLURQ=="></div><button class="btn-link js-clone-selector" data-protocol="http" type="submit">HTTPS</button></form> or <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="https://github.com/users/set_protocol?protocol_selector=subversion&protocol_type=clone" class="inline-form js-clone-selector-form " data-form-nonce="1eda1b6a10fcec27dce738ceb26e5071dc3e9d2d" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="5x2FEIwGbg8nvoINse4KLbZeb0Whmyfj17bFKT/wx+zbGVyNsGcO2tAE0eo15VvQ1h9s8NC4S7oZ1WokRRQLUA=="></div><button class="btn-link js-clone-selector" data-protocol="subversion" type="submit">Subversion</button></form>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</div>
+
+              <a href="https://github.com/acornejo/jquery-cropbox/archive/master.zip" class="btn btn-sm sidebar-button" aria-label="Download the contents of acornejo/jquery-cropbox as a zip file" title="Download the contents of acornejo/jquery-cropbox as a zip file" rel="nofollow">
+                <span class="octicon octicon-cloud-download"></span>
+                Download ZIP
+              </a>
+            </div>
+        </div>
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+
+          
+<span id="js-show-full-navigation"></span>
+
+  <div class="repository-meta js-details-container ">
+    <div class="repository-description">
+      jQuery Cropbox plugin
+    </div>
+
+    <div class="repository-website">
+      <a href="http://acornejo.github.io/jquery-cropbox/" rel="nofollow">http://acornejo.github.io/jquery-cropbox/</a>
+    </div>
+
+</div>
+
+
+<div class="overall-summary overall-summary-bottomless">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax="" href="https://github.com/acornejo/jquery-cropbox/commits/master">
+            <span class="octicon octicon-history"></span>
+            <span class="num text-emphasized">
+              67
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax="" href="https://github.com/acornejo/jquery-cropbox/branches">
+          <span class="octicon octicon-git-branch"></span>
+          <span class="num text-emphasized">
+            2
+          </span>
+          branches
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax="" href="https://github.com/acornejo/jquery-cropbox/releases">
+          <span class="octicon octicon-tag"></span>
+          <span class="num text-emphasized">
+            9
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        
+  <a href="https://github.com/acornejo/jquery-cropbox/graphs/contributors">
+    <span class="octicon octicon-organization"></span>
+    <span class="num text-emphasized">
+      7
+    </span>
+    contributors
+  </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="https://github.com/acornejo/jquery-cropbox/search?l=javascript">
+                <span class="color-block language-color" style="background-color:#f1e05a;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">86.7%</span>
+              </a>
+          </li>
+          <li>
+              <a href="https://github.com/acornejo/jquery-cropbox/search?l=css">
+                <span class="color-block language-color" style="background-color:#563d7c;"></span>
+                <span class="lang">CSS</span>
+                <span class="percent">13.3%</span>
+              </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details">
+    <span class="language-color" aria-label="JavaScript 86.7%" style="width:86.7%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+    <span class="language-color" aria-label="CSS 13.3%" style="width:13.3%; background-color:#563d7c;" itemprop="keywords">CSS</span>
+  </div>
+
+
+
+  <div class="file-navigation in-mid-page">
+  <a href="https://github.com/acornejo/jquery-cropbox/find/master" class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s right" data-pjax="" data-hotkey="t" aria-label="Quickly jump between files" data-ga-click="Repository, find file, location:repo overview">
+    <span class="octicon octicon-list-unordered"></span>
+  </a>
+    <a href="https://github.com/acornejo/jquery-cropbox/compare" aria-label="Compare, review, create a pull request" class="btn btn-sm btn-primary tooltipped tooltipped-se left compare-button" data-pjax="" data-ga-click="Repository, go to compare view, location:repo overview; icon:git-compare">
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w" title="master" role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <i>Branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="" aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="https://github.com/acornejo/jquery-cropbox#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="https://github.com/acornejo/jquery-cropbox#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open " href="https://github.com/acornejo/jquery-cropbox/tree/gh-pages" data-name="gh-pages" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="gh-pages">
+                gh-pages
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected" href="https://github.com/acornejo/jquery-cropbox/tree/master" data-name="master" data-skip-pjax="true" rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/v0.1.9" data-name="v0.1.9" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.1.9">v0.1.9</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/v0.1.7" data-name="v0.1.7" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.1.7">v0.1.7</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/v0.1.6" data-name="v0.1.6" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.1.6">v0.1.6</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/v0.1.5" data-name="v0.1.5" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="v0.1.5">v0.1.5</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/0.1.4" data-name="0.1.4" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="0.1.4">0.1.4</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/0.1.3" data-name="0.1.3" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="0.1.3">0.1.3</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/0.1.2" data-name="0.1.2" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="0.1.2">0.1.2</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/0.1.1" data-name="0.1.1" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="0.1.1">0.1.1</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/acornejo/jquery-cropbox/tree/0.1.0" data-name="0.1.0" data-skip-pjax="true" rel="nofollow" class="js-navigation-open select-menu-item-text css-truncate-target" title="0.1.0">0.1.0</a>
+            </div>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="breadcrumb"><span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="./acornejo_jquery-cropbox · GitHub_files/acornejo_jquery-cropbox · GitHub.html" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">jquery-cropbox</span></a></span></span><span class="separator">/</span>
+  <span class="tooltipped tooltipped-e disabled text-muted" aria-label="You must be signed in to make or propose changes">
+    <span class="octicon octicon-plus"></span>
+  </span>
+</div>
+</div>
+
+
+
+
+
+  <div class="commit commit-tease js-details-container">
+    <p class="commit-title ">
+        <a href="https://github.com/acornejo/jquery-cropbox/commit/3a960e637487f60d3282d0a5de085c71307264c4" class="message" data-pjax="true" title="Merge pull request #72 from pkyriacou/master
+
+Support for hammer.js v2.0.4">Merge pull request</a> <a href="https://github.com/acornejo/jquery-cropbox/pull/72" class="issue-link" title="Support for hammer.js v2.0.4">#72</a> <a href="https://github.com/acornejo/jquery-cropbox/commit/3a960e637487f60d3282d0a5de085c71307264c4" class="message" data-pjax="true" title="Merge pull request #72 from pkyriacou/master
+
+Support for hammer.js v2.0.4">from pkyriacou/master</a>
+        <span class="hidden-text-expander inline"><a href="https://github.com/acornejo/jquery-cropbox#" class="js-details-target">…</a></span>
+    </p>
+      <div class="commit-desc"><pre>Support for hammer.js v2.0.4</pre></div>
+    <div class="commit-meta">
+      <button aria-label="Copy SHA" class="js-zeroclipboard zeroclipboard-link tooltipped tooltipped-s" data-clipboard-text="3a960e637487f60d3282d0a5de085c71307264c4" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+      <a href="https://github.com/acornejo/jquery-cropbox/commit/3a960e637487f60d3282d0a5de085c71307264c4" class="sha-block" data-pjax="">latest commit <span class="sha">3a960e6374</span></a>
+
+      <div class="authorship">
+        <img alt="@acornejo" class="avatar" height="20" src="./acornejo_jquery-cropbox · GitHub_files/83786" width="20">
+        <span class="author-name"><a href="https://github.com/acornejo" rel="author">acornejo</a></span>
+        authored <time class="updated" datetime="2015-05-06T15:36:05Z" is="relative-time" title="May 6, 2015, 11:36 PM GMT+8">on May 6</time>
+
+      </div>
+    </div>
+  </div>
+
+
+<div class="file-wrap">
+  <a href="https://github.com/acornejo/jquery-cropbox/tree/3a960e637487f60d3282d0a5de085c71307264c4" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <table class="files js-navigation-container js-active-navigation-container" data-pjax="">
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><span class="octicon octicon-alert"></span></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/.gitignore" class="js-directory-link js-navigation-open" id="a084b794bc0759e7a6b77810e01874f2-444939998d6d0bfb0bc7fd7665a6f7de44e551a4" title=".gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/e61bcd6ad1ea2db8e598523a43f7a9131e56fd43" class="message" data-pjax="true" title="Initial import.">Initial import.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-12-01T03:55:06Z" is="time-ago" title="Dec 1, 2013, 11:55 AM GMT+8">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/LICENSE" class="js-directory-link js-navigation-open" id="9879d6db96fd29134fc802214163b95a-6907984539a590c2b0f7ca6276e7abdbbd86e4da" title="LICENSE">LICENSE</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/e61bcd6ad1ea2db8e598523a43f7a9131e56fd43" class="message" data-pjax="true" title="Initial import.">Initial import.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2013-12-01T03:55:06Z" is="time-ago" title="Dec 1, 2013, 11:55 AM GMT+8">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/README.md" class="js-directory-link js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-922d0230a0f9f000c01fad2f6425c22672933f15" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/e8c91bc4370336bb02d6111172368e4a96b9f043" class="message" data-pjax="true" title="Merge pull request #56 from Quji/master
+
+On load argument">Merge pull request</a> <a href="https://github.com/acornejo/jquery-cropbox/pull/56" class="issue-link" title="On load argument">#56</a> <a href="https://github.com/acornejo/jquery-cropbox/commit/e8c91bc4370336bb02d6111172368e4a96b9f043" class="message" data-pjax="true" title="Merge pull request #56 from Quji/master
+
+On load argument">from Quji/master</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-02-22T22:30:01Z" is="time-ago" title="Feb 23, 2015, 6:30 AM GMT+8">8 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/bower.json" class="js-directory-link js-navigation-open" id="0a08a7565aba4405282251491979bb6b-e9545d19067fe4baa3cb5540e16bec1c79d61f88" title="bower.json">bower.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/9e518d488be2cdb39622f473772d5997885e6ef0" class="message" data-pjax="true" title="v0.1.9">v0.1.9</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-04-07T12:54:19Z" is="time-ago" title="Apr 7, 2014, 8:54 PM GMT+8">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/cropbox.jquery.json" class="js-directory-link js-navigation-open" id="d3f3ec841099ed0b49771aa7528bdb7c-88e0026bbc0959b1e1483e63d4d674a1ce5b33e1" title="cropbox.jquery.json">cropbox.jquery.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/9e518d488be2cdb39622f473772d5997885e6ef0" class="message" data-pjax="true" title="v0.1.9">v0.1.9</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-04-07T12:54:19Z" is="time-ago" title="Apr 7, 2014, 8:54 PM GMT+8">2 years ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/jquery.cropbox.css" class="js-directory-link js-navigation-open" id="eb7a14d88bbacb073c6621584a55fb2d-8777bd88a193efdff4fd28f78fe2fa2f18ad072b" title="jquery.cropbox.css">jquery.cropbox.css</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/1f6126fb63eb1b186a62da76f70bd31ea96a4a55" class="message" data-pjax="true" title="Removed CSS expression, which is no longer supported in IE8+, so it is not needed by any of this plugins supported browsers. This line was also causing compile errors in some Less pre-processor libraries.">Removed CSS expression, which is no longer supported in IE8+, so it i…</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-07-25T15:37:43Z" is="time-ago" title="Jul 25, 2014, 11:37 PM GMT+8">a year ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/jquery.cropbox.js" class="js-directory-link js-navigation-open" id="1092cd59d18d491a380d3247f8af2aa1-bcb8b1dc443155b4624451ae692af4446e8290eb" title="jquery.cropbox.js">jquery.cropbox.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/95d0f9460fb5ceb3262fde489b5756dcdc5ce5a6" class="message" data-pjax="true" title="Support for hammer.js v2.0.4
+
+[Change] Added support for hammer.js v2.0.4.
+[Fixed] Extra commas caused some IE versions to stop code execution.
+[Fixed] cropFrame was being left-over when cropbox was removed.">Support for hammer.js v2.0.4</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-06T15:29:49Z" is="time-ago" title="May 6, 2015, 11:29 PM GMT+8">5 months ago</time></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="./acornejo_jquery-cropbox · GitHub_files/octocat-spinner-32.gif" width="16">
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="https://github.com/acornejo/jquery-cropbox/blob/master/package.json" class="js-directory-link js-navigation-open" id="b9cfc7f2cdf78a7f4b91a753d10865a2-2a416f8156c781ec3028a42a52c689fc85fb9635" title="package.json">package.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="https://github.com/acornejo/jquery-cropbox/commit/9e518d488be2cdb39622f473772d5997885e6ef0" class="message" data-pjax="true" title="v0.1.9">v0.1.9</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-04-07T12:54:19Z" is="time-ago" title="Apr 7, 2014, 8:54 PM GMT+8">2 years ago</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+  <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+    <h3>
+      <span class="octicon octicon-book"></span>
+      README.md
+    </h3>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-jquery-cropbox-plugin" class="anchor" href="https://github.com/acornejo/jquery-cropbox#jquery-cropbox-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>jquery-cropbox plugin.</h1>
+
+<p>jQuery plugin for in-place image cropping (zoom &amp; pan, as opposed to select and drag).</p>
+
+<p>This plugin depends only on jQuery. If either <code>Hammer.js</code> or <code>jquery.hammer.js</code> is
+loaded, the cropbox plugin will support gestures for panning and zooming
+the cropbox. Similary, if the <code>jquery.mousewheel.js</code> plugin is loaded, then the
+cropbox plugin will support zoom in &amp; out using the mousewheel. All
+dependencies on third party libraries (other than jQuery) are strictly
+optional. Support for CommonJS and AMD loading is built in.</p>
+
+<p>In browsers that support the HTML5 FIle API and Canvas API, the cropbox
+plugin provides mehtods to crop the image on the client and obtain the
+resulting cropped image as a Data URL or a binary blob to upload it to
+the server.</p>
+
+<p>Check out the plugin in action here <a href="http://acornejo.github.io/jquery-cropbox/">http://acornejo.github.io/jquery-cropbox/</a></p>
+
+<p><strong>History:</strong>
+This plugin started as a fork of
+<a href="https://github.com/terebentina/jQcrop">jQcrop</a>, and added touch
+support, mousewheel support and client resize support through the canvas
+api.</p>
+
+<p><strong>Install with Bower:</strong> <code>bower install cropbox</code></p>
+
+<h2><a id="user-content-usage" class="anchor" href="https://github.com/acornejo/jquery-cropbox#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-js"><pre>    $(<span class="pl-s"><span class="pl-pds">'</span>yourimage<span class="pl-pds">'</span></span>).cropbox({
+        width<span class="pl-k">:</span> <span class="pl-c1">200</span>,
+        height<span class="pl-k">:</span> <span class="pl-c1">200</span>
+    }, <span class="pl-k">function</span>() {
+        <span class="pl-c">//on load</span>
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Url: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-v">this</span>.getDataURL());
+    }).on(<span class="pl-s"><span class="pl-pds">'</span>cropbox<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">e</span>, <span class="pl-smi">data</span>) {
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>crop window: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> data);
+    });</pre></div>
+
+<h2><a id="user-content-options" class="anchor" href="https://github.com/acornejo/jquery-cropbox#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<table>
+    <tbody><tr>
+        <th>Option</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Required</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>integer</td>
+        <td>200</td>
+        <td>no</td>
+        <td>Width in pixels of the cropping window</td>
+    </tr>
+    <tr>
+        <td>height</td>
+        <td>integer</td>
+        <td>200</td>
+        <td>no</td>
+        <td>Height in pixels of the cropping window</td>
+    </tr>
+    <tr>
+        <td>zoom</td>
+        <td>integer</td>
+        <td>10</td>
+        <td>no</td>
+        <td>Number of incremental zoom steps. With the default of 10, you have to click the zoom-in button 9 times to reach 100%.</td>
+    </tr>
+    <tr>
+        <td>maxZoom</td>
+        <td>number</td>
+        <td>1.0</td>
+        <td>no</td>
+        <td>Maximum zoom value. With the default of 1.0 users can't zoom beyond the maximum image resolution.</td>
+    </tr>
+    <tr>
+        <td>controls</td>
+        <td>string/jquery</td>
+        <td>null</td>
+        <td>no</td>
+        <td>If not null, this is the entire html block that should appear on hover over the image for instructions and/or buttons (could include the zoom in/out buttons for example). If null, the default html block is used which has the text "Click to drag" and the zoom in/out buttons. Use false to disable controls.</td>
+    </tr>
+    <tr>
+        <td>result</td>
+        <td>{cropX:number, cropY:number, cropW:number, cropH:number}</td>
+        <td>null</td>
+        <td>no</td>
+        <td>Set the initial cropping area</td>
+    </tr>
+    <tr>
+        <td>showControls</td>
+        <td>never, always, hover, auto</td>
+        <td>auto</td>
+        <td>no</td>
+        <td>This flag is used to determine when to display the controls. Never, always and hover do exactly what you would expect (never show them, always show them, show them on hover). The auto flag is the same as the hover flag, except that on mobile devices it always shows the controls (since there is no hover event).</td>
+    </tr>
+</tbody></table>
+
+<h2><a id="user-content-methods" class="anchor" href="https://github.com/acornejo/jquery-cropbox#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
+
+<table>
+    <tbody><tr>
+        <th>Name</th>
+        <th>Parameters</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>zoomIn</td>
+        <td>(none)</td>
+        <td>Increase image zoom level by one step</td>
+    </tr>
+    <tr>
+        <td>zoomOut</td>
+        <td>(none)</td>
+        <td>Decrease image zoom level by one step</td>
+    </tr>
+    <tr>
+        <td>zoom</td>
+        <td>percent</td>
+        <td>Set zoom leevl to a value between 0 and 1. Need to call
+        update to reflect the changes.</td>
+    </tr>
+    <tr>
+        <td>drag</td>
+        <td>{startX: integer, startY: integer, dx: integer, dy: integer}</td>
+        <td>Simulate image dragging, starting from (startX,startY) and moving a delta of (dx,dy). Need to call update to reflect the changes.</td>
+    </tr>
+    <tr>
+        <td>setCrop</td>
+        <td>{cropX: number, cropY: number, cropW: number, cropH: number}</td>
+        <td>Set crop window.</td>
+    </tr>
+    <tr>
+        <td>update</td>
+        <td>(none)</td>
+        <td>Update the cropped result (must call after zoom and drag).</td>
+    </tr>
+    <tr>
+        <td>getDataURL</td>
+        <td>(none)</td>
+        <td>Generate a URL for the cropped image on the client (requires HTML5 compliant browser).</td>
+    </tr>
+    <tr>
+        <td>getBlob</td>
+        <td>(none)</td>
+        <td>Generate a Blob with the cropped image (requires HTML5 compliant browser).</td>
+    </tr>
+    <tr>
+        <td>remove</td>
+        <td>(none)</td>
+        <td>Remove the cropbox functionality from the image.</td>
+    </tr>
+</tbody></table>
+
+<h2><a id="user-content-event" class="anchor" href="https://github.com/acornejo/jquery-cropbox#event" aria-hidden="true"><span class="octicon octicon-link"></span></a>Event</h2>
+
+<p>To get the crop results, bind a function on the <code>cropbox</code> event or read the object's result property .</p>
+
+<div class="highlight highlight-source-js"><pre>    $(<span class="pl-s"><span class="pl-pds">'</span>yourimage<span class="pl-pds">'</span></span>).cropbox({width<span class="pl-k">:</span> <span class="pl-c1">250</span>, height<span class="pl-k">:</span> <span class="pl-c1">250</span>})
+    .on(<span class="pl-s"><span class="pl-pds">'</span>cropbox<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">e</span>, <span class="pl-smi">result</span>) {
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(result);
+    });</pre></div>
+
+<p>A reference to the cropbox object can be accessed like so:</p>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> crop <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>yourimage<span class="pl-pds">'</span></span>).<span class="pl-c1">data</span>(<span class="pl-s"><span class="pl-pds">'</span>cropbox<span class="pl-pds">'</span></span>);
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(crop.result);</pre></div>
+
+<p>or inside the onload function:</p>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> crop <span class="pl-k">=</span> $(<span class="pl-s"><span class="pl-pds">'</span>yourimage<span class="pl-pds">'</span></span>).cropbox({}, <span class="pl-k">function</span>() {
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-v">this</span>.result);
+    });</pre></div>
+
+<p>You then have access to all the properties and methods used for that specific element.</p>
+
+<h2><a id="user-content-bug-reporting" class="anchor" href="https://github.com/acornejo/jquery-cropbox#bug-reporting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bug Reporting</h2>
+
+<p>Use the <a href="https://github.com/acornejo/jquery-cropbox/issues">issues</a>
+section to report any problems or questions regarding jquery-cropbox.</p>
+
+<p>Please understand that I develop this plugin in my spare time, which is
+limited. To make the best use of my time, I ask that you submit
+a detailed bug report and include a <a href="http://jsfiddle.net/">jsfiddle</a> that
+exhibits the problem, otherwise I won't be able to offer much help.</p>
+
+<p>A sample jsfiddle is provided <a href="http://jsfiddle.net/Ak6d5/">here</a>,
+fork it and create a minimal example that recreates the problem you
+are having and provide a link to it in the issue.</p>
+</article>
+  </div>
+
+
+        </div>
+      </div>
+      <div class="modal-backdrop"></div>
+    </div>
+  </div>
+
+
+    </div>
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+        <li><a href="https://github.com/pricing" data-ga-click="Footer, go to pricing, text:pricing">Pricing</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+</a>
+    <ul class="site-footer-links">
+      <li>© 2015 <span title="0.04059s from github-fe124-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        <li><a href="https://help.github.com/" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+    
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <span class="octicon octicon-x"></span>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" integrity="sha256-+Ec97OckLaaiDVIxNjSIGzl1xSzrqh5sOBV8DyYYVpE=" src="./acornejo_jquery-cropbox · GitHub_files/frameworks-f8473dece7242da6a20d52313634881b3975c52cebaa1e6c38157c0f26185691.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-sMK/23WgyzYQHnhP66woMP5Jsimyc7jJ7V7DR2hCHoo=" src="./acornejo_jquery-cropbox · GitHub_files/github-b0c2bfdb75a0cb36101e784febac2830fe49b229b273b8c9ed5ec34768421e8a.js"></script>
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <span class="octicon octicon-alert"></span>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+  
+
+
+</body></html>

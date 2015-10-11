@@ -1,6 +1,6 @@
 var dtable;
 $(document).ready(function  () {
-	$('select.form-control').select2();
+	window.selec2Object = $('select.form-control').select2();
 	enableDatePicker();
 	enableInputMask();	
 	setTimeout(function  () {
@@ -56,8 +56,7 @@ function getMessage () {
 					  "hideEasing": "swing",
 					  "showMethod": "slideDown",
 					  "hideMethod": "slideUp"
-					}
-					console.log($(e).attr('class') == "error");
+					};
 			if($(e).attr('class') == "error")
 			{
 				message = function  (message) 

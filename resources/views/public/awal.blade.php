@@ -99,10 +99,11 @@
           @foreach($data as $list)
             <tr>
               <td>
-                {!! link_to_route('umum.profil',$list->nama,$list->id) !!}
+                {!! link_to_route('umum.profil',$list['nama'],$list['id']) !!}
               </td>
-              <td>{{ $list->nama }}</td>
-              <td>{{-- $hitungJenisUsaha->hitung($list->getLastOmset(),$list->getLastAset() ) --}}  {{ dd($list->getLastAset()) }}</td>
+              <td>{{ $list['nama'] }}</td>
+              <td>
+              {{ $hitungJenisUsaha->hitung($list['kondisi.omset'],$list['kondisi.aset']) }}</td>
             </tr>
           @endforeach
           </tbody>

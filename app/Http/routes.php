@@ -6,7 +6,8 @@ Route::group(['prefix'=>'admin','middleware'=>'UAC:admin','namespace'=>'Admin'],
 	Route::get('/',['as'=>'admin.landing','uses'=>'AdminController@landing']);
 	Route::resources([
 			'unitkegiatan'=>'UnitKegiatanController',
-			'kondisiusaha'=>'KondisiUsahaController'
+			'kondisiusaha'=>'KondisiUsahaController',
+			'produk'=>'ProdukController',
 	]);
 	Route::group(['prefix'=>'data','namespace'=>'Data'],function ()
 	{

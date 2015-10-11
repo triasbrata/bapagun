@@ -85,7 +85,7 @@ class UnitKegiatanController extends Controller
 			foreach ($temppersonalData as $key => $value) {
 				$personalData[str_replace('personal_', '', $key)] = $value;
 			}
-			if ($personal->create($personalData)) {
+			if ($personal->update($personalData)) {
 				return $this->routeAndSuccess('store');
 			}else{
 				$unitUsaha->destroy();

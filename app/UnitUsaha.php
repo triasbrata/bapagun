@@ -39,13 +39,27 @@ class UnitUsaha extends Model
         {
             return $this->hasMany(KondisiUsaha::class,"unit_usaha_id");
         }
-        public function getLastOmset()
+        public function produk()
         {
-            return $this->kondisi()->last()->omset;
+            return $this->hasMany(Produk::class,"unit_usaha_id");
         }
-        public function getLastAset()
+        public function kondis_first()
         {
-            return $this->with('kondisi');
-            $kondisi = $this->kondisi()->me();
+            return $this->kondisi->first();
         }
+        public function LastReport()
+        {
+            $getOut = [];
+            foreach ($this->has('kondisi')->get() as $usaha) {
+                $get = $usaha->with(['kondisi'=>function ($q) use ($usaha)
+                {
+                    $tahun =  $q->where('unit_usaha_id',$usaha->id)->max('tahun');
+                    $bulan =  $q->where('unit_usaha_id',$usaha->id)->max('bulan');
+                    $a = $q->where('tahun',$tahun)->orWhere(['tahun'=>$tahun,'bulan'=>$bulan])->orderBy('updated_at','desc');
+                }])->get()->toArray();
+                $getOut = array_replace_recursive($get,$getOut);
+            }
+            return $getOut;
+        }
+
 }

@@ -17,6 +17,7 @@ class MenuFetcher
 					[ 'route'=>'landing', 'name'=>'Dashboard Admin', 'icon'=> 'fa fa-home'],
 					[ 'route'=>'unitkegiatan.index', 'name'=>'Unit Kegiatan', 'icon'=> 'fa fa-database'],
 					[ 'route'=>'kondisiusaha.index', 'name'=>'Kondisi Usaha', 'icon'=> 'fa fa-line-chart'],
+					[ 'route'=>'produk.index', 'name'=>'Produk Usaha', 'icon'=> 'fa fa-shopping-cart'],
 					[ 'route'=>'data.', 'name'=>'Data Utama', 'icon'=> 'fa fa-tags','inGroup'=>[
 						[ 'route'=>'tujuan_pemasaran.index', 'name'=>'Tujuan Pemasaran', 'icon'=> 'fa fa-tag'],
 						[ 'route'=>'tempat_pemasaran.index', 'name'=>'Tempat Pemasaran', 'icon'=> 'fa fa-tag'],

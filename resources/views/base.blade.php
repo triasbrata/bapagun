@@ -13,7 +13,7 @@
 	<script src="{{ asset('js/all.js') }}"></script>
 	<style>
 	.select-overflow{
-		overflow-y:scroll"
+		overflow-y:scroll
 	}
 	</style>
 </head>
@@ -21,7 +21,6 @@
 	@include('incl/message')
 	@yield('base-content')
 	<!-- BEGIN JAVASCRIPT -->
-	{{-- <script src="{{ asset('js/all.js') }}"></script> --}}
 	@yield('javascript')
 </body>
 </html>

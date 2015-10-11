@@ -12,18 +12,11 @@ class KondisiUsaha extends Model
     	{
     		return $this->belongsTo(UnitUsaha::class,"unit_usaha_id");
     	}
-        public function me()
-        {
-            return "me";
-        }
+       
     	public function last()
     	{
     		return $this->orderBy('created_at', 'desc')->first();
     	}
-        public function lastReport()
-        {
-            return $this->orderBy('update_at','desc')->max('tahun')->max('bulan')->first();
-        }
     	public function tujuan_pemasaran()
     	{
     		return $this->belongsToMany(TujuanPemasaran::class,'kondisi_tujuan_pem');

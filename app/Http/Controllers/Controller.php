@@ -128,7 +128,7 @@ abstract class Controller extends BaseController
      * @param  Eloquent  $id
      * @return Response
      */
-    public function show(EloquentModel $data)
+    public function show($data)
     {
 
         $namaForm = "Deskripsi Data <b>{$this->moduleName}</b>";

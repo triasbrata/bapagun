@@ -47,6 +47,7 @@ elixir(function(mix) {
         'vendor/toastr/toastr.js',
         'vendor/DataTables/jquery.dataTables.min.js',
         'vendor/jasny-bootstrap/jasny-bootstrap.min.js',
+        'vendor/dropzone/dropzone.js',
       
         /*core js*/
         // 'vendor/gmaps/gmaps.js',

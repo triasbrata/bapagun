@@ -10,15 +10,14 @@ use App\UnitUsaha;
 
 class IndexController extends Controller
 {
-    public function awal()
+    public function awal(UnitUsaha $m )
     {
-    	$data = UnitUsaha::all()
-    	foreach (UnitUsaha::all() as $usha) {
-    		$kondisi = $usaha->kondisi()
-    		$kondisi->lastReport()->toArray();
-    		print_t($kondisi);
+    	$data = [];
+    	foreach ($m->LastReport() as $l ) {
+    		$l['kondisi']= $l['kondisi'][0];
+    		$l = array_dot($l);
+    		$data = array_merge_recursive($data,[$l]);
     	}
-    
-    	// return $this->view('public.awal',compact('data'));
+    	return $this->view('public.awal',compact('data'));
     }
 }
