@@ -42,7 +42,7 @@ class ProdukController extends Controller
 		$filename = md5(date('Y-mm-dd : h:i:s')).".{$file->guessExtension()}";
 		if($file->move($this->path,$filename)){
 			$unitUsaha = UnitUsaha::find($r->input('unit_usaha_id'));
-			$produk = new Produk(['foto'=>$filename]);
+			$produk = new Produk(['foto'=>$filename,'unggulan'=>'false']);
 			if($unitUsaha->produk()->save($produk)){
 				return response(['message'=>"Foto {$unitUsaha->nama}, dengan nama {$file->getClientOriginalName()} berhasil di tambah silahkan perbarui info produk"],200);
 			}else{
@@ -64,11 +64,17 @@ class ProdukController extends Controller
 	public function update(UnitUsaha $m, ProdukRequest $r)
 	{
 		$produk = Produk::find($r->input('id'));
+		if(! is_null($r->input('unggulan')) ){
+			if($produk->fill( $r->only('unggulan') )->save()){
+				return response()->json(['message'=>'Produk berhasil di atur sebagai produk unggulan']);
+			}
+			return response()->json(['message'=>'Produk gagal di atur sebagai produk unggulan']);
+		}
 		$dataProduk = $r->only(['nama','keterangan']);
 		if($produk->fill($dataProduk)->save()){
 			return response()->json(['message'=>'Produk berhasil diperbarui']);
 		}
-		return response()->json(['message'=>'Produk berhasil diperbarui']);
+		return response()->json(['message'=>'Produk gagal diperbarui']);
 
 
 	}

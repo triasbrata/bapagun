@@ -97,116 +97,25 @@
         <div class="row center">
           <h4>Produk Unggulan Kalimantan Timur</h4>
           <div class="owl-carousel">
-            <a href="profil1.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil2.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil3.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil4.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil5.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil6.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil7.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil8.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil9.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
-            <a href="profil10.html" class="item">
-              <div class="card">
-                <div class="card-image">
-                  <img src="imgs/product.png" alt="">
-                </div>
-                <div class="card-content">
-                  <small class="black-text card-title">Product name</small>
-                  <p class="black-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-              </div>
-            </a>
+           @foreach($dataProdukUnggulan as $produk)
+             <a href="{{ route('umum.profil',[$produk->unit_usaha_id]) }}" class="item">
+               <div class="card">
+                 <div class="card-image">
+                   <img src="{{ asset('imgs/produk/'.$produk->foto) }}" alt="">
+                 </div>
+                 <div class="card-content">
+                   <small class="black-text card-title">{{ $produk->nama }}</small>
+                   <p class="black-text">
+                     @if(empty($produk->keterangan))
+                       Kel. {{ucwords(strtolower($produk->unit_usaha->desa->label))}}, Kec. {{ucwords(strtolower($produk->unit_usaha->kecamatan->label))}}, Kab. {{ucwords(strtolower($produk->unit_usaha->kabupaten->label))}}
+                     @else
+                       {{ $produk->keterangan }}
+                     @endif
+                   </p>
+                 </div>
+               </div>
+             </a>
+           @endforeach
           </div>
         </div>
       </div>

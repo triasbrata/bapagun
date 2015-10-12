@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\UnitUsaha;
+use App\Produk;
 
 class IndexController extends Controller
 {
@@ -17,8 +18,9 @@ class IndexController extends Controller
     		$l['kondisi']= $l['kondisi'][0];
     		$l = array_dot($l);
     		$data = array_merge_recursive($data,[$l]);
-    	}
-    	return $this->view('umum.awal',compact('data'));
+        }
+        $dataProdukUnggulan = Produk::ofUnggulan('true')->get();
+    	return $this->view('umum.awal',compact('data','dataProdukUnggulan'));
     }
     public function profil($id)
     {

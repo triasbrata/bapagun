@@ -31,6 +31,11 @@ class ProdukRequest extends Request
      */
     public function rules()
     {
+        if(Request::input('unggulan')){
+            return [
+                'unggulan'=>'required'
+            ];
+        }
         if(Route::currentRouteName() == 'admin.produk.post'){
             return [
                 'foto'=>'required|image|mimes:png,jpeg,jpg,jpe,gif,bmp'
@@ -40,5 +45,9 @@ class ProdukRequest extends Request
                 'nama'=>'required|min:3',
                 'keterangan'=>'min:5'
         ];
+    }
+    public function messages()
+    {
+        return ['unggulan.required'=>'Produk Unggulan tidak terpilih'];
     }
 }

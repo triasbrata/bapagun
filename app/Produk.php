@@ -11,4 +11,8 @@ class Produk extends Model
     	{
     		return $this->belongsTo(UnitUsaha::class,"unit_usaha_id");
     	}
+    	public function scopeOfUnggulan($q, $unggulan)
+    	{
+    		return $q->whereUnggulan($unggulan);
+    	}
 }

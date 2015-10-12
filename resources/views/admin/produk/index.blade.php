@@ -93,17 +93,17 @@
 							<tbody id="list">
 								@foreach($lists as $usaha)
 									@foreach($usaha->produk as $produk)
-									<tr data-produk="{{ $usaha->id }}">
+									<tr data-produk="{{ $produk->id }}">
 										<td class="valing">{{ $usaha->nama }}</td>
 										<td class="valing"><img src="{{ asset('imgs/produk/'.$produk->foto) }}" width="50px" class="produk"></td>
 										<td class="valing">{{$produk->nama}}</td>
 										<td class="valing">{{ $produk->keterangan }}</td>
 										<td>
-											<button class="btn btn-warning {{ $produk->unggulan ? 'unlike' : 'like' }}like" title="Produk Unggulan">
+											<button class="btn {{ $produk->unggulan == 'true' ? 'btn-success unlike' : 'btn-warning like' }}" title="Produk Unggulan">
 												@if($produk->unggulan == 'true')
-												<i class="fa fa-star"></i>
+												<i class="md md-star"></i>
 												@else
-												<i class="fa fa-star-o"></i>
+												<i class="md md-star-outline"></i>
 												@endif
 											</button>
 										</td>
@@ -133,7 +133,7 @@
 @stop
 @section('javascript')
 <script>
-	var window.toastr.options = {
+	window.msg = {
 				  "closeButton": false,
 				  "debug": false,
 				  "newestOnTop": true,
@@ -150,7 +150,7 @@
 				  "showMethod": "slideDown",
 				  "hideMethod": "slideUp"
 				};
-		toastr.options = window.toastr.options;
+		toastr.options = window.msg;
 	$(document).on('click','.btn-add',function  () {
 		$("#form-upload").slideDown(400);
 	})
@@ -177,9 +177,12 @@
 					 var hidden = $('<input>',{type:'hidden',name:'unit_usaha_id',value:data.unit_usaha_id,});
 					 $('<td>').html([input,hidden]).appendTo(tr);
 					 var keterangan = $('<input>',{class:'form-control submit-enter',name:'keterangan',value:produk.keterangan,'placeholder':'Nama produk',row:2});
-					 var deletebtn = $('<button>',{class:'btn btn-danger delete'}).html($('<i>',{class:'md md-remove'}));
+					 var deletebtn = $('<button>',{class:'btn btn-danger btn-sm delete',title:"Hapus Produk"}).html($('<i>',{class:'md md-remove'}));
+					 var like =  produk.unggulan == 'true' ? 'btn-success unlike': 'btn-warning like';
+					 var star =  produk.unggulan == 'true' ? 'md-star': 'md-star-outline';
+					 var likebtn = $('<button>',{class:'btn btn-sm btn-success '+like,title:"Produk Unggulan"}).html($('<i>',{class:'md '+star}));
 					 $('<td>').html(keterangan).appendTo(tr);
-					 $('<td>').html(deletebtn).appendTo(tr);
+					 $('<td>').html($('<div>',{class:'btn btn-group'}).html([deletebtn,likebtn])).appendTo(tr);
 					 tbody.append(tr);
 				});
 			}
@@ -187,12 +190,28 @@
 	}
 	$(document).on('click','.like,.unlike',function  () {
 
-		toastr.options = window.toastr.options;
+		toastr.options = window.msg;
 		var $this = $(this),
-			idProduk = $this.parents('tr').attr('data-produk');
+			Produk = $this.parents('tr');
 		$data = $this.hasClass('unlike') ? 'false' : 'true';
-		$.post('{{ route("admin.produk.patch") }}', {_method: 'PATCH',_token:{{ csrf_token() }},unggulan:$data}, function(data, textStatus, xhr) {
+		$.post('/admin/produk/'+$('[name="unit_usaha_id"]').val(),
+			 {
+			 		_method: 'PATCH',
+			 		_token:"{{ csrf_token() }}",
+			 		unggulan:$data,
+			 		unit_usaha_id:$('[name="unit_usaha_id"]').val(),
+			 		id:Produk.attr('data-produk')
+			 	}, function(data, textStatus, xhr) {
 			toastr.success(data.message,'');
+			var icon = $this.children('i');
+			if(icon.hasClass('md-star')){
+				$this.removeClass('btn-success').addClass('btn-warning')
+				icon.removeClass('md-star').addClass('md-star-outline');
+			}
+			else{
+				$this.removeClass('btn-warning').addClass('btn-success');
+				icon.removeClass('md-star-outline').addClass('md-star');
+			}
 		},'json').error(function  (data) {
 			toastr.error(data.message,'');
 		});
@@ -206,7 +225,7 @@
 		$('#modal').modal()
 	})
 	$(document).on('keypress','.submit-enter',function  (e) {
-		toastr.options = window.toastr.options;
+		toastr.options = window.msg;
 		var root = $(this).parents('tr');
 		if(e.keyCode == 13){
 			$.ajax({
@@ -233,7 +252,7 @@
 		}
 	})
 	$(document).on('click','.delete',function  (e) {
-		toastr.options = window.toastr.options;
+		toastr.options = window.msg;
 		var root = $(this).parents('tr');
 			$.ajax({
 				url: '/admin/produk/'+root.find('[name="unit_usaha_id"]').val(),
