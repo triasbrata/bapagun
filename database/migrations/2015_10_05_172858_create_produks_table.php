@@ -18,7 +18,7 @@ class CreateProduksTable extends Migration
             $table->foreign('unit_usaha_id')->references('id')->on('unit_usahas')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama',35);
             $table->string('keterangan',255);
-            $table->string('foto',34);
+            $table->string('foto',35);
             $table->timestamps();
         });
     }

@@ -47,6 +47,15 @@ class UnitUsaha extends Model
         {
             return $this->kondisi->first();
         }
+        public function singleLastReport()
+        {
+            return $this->where('id',$this->id)->with(['kondisi'=>function ($q)
+            {
+                $tahun =  $q->where('unit_usaha_id',$this->id)->max('tahun');
+                $bulan =  $q->where('unit_usaha_id',$this->id)->max('bulan');
+                return $q->where('tahun',$tahun)->orWhere(['tahun'=>$tahun,'bulan'=>$bulan])->orderBy('updated_at','desc');
+            }])->get();
+        }
         public function LastReport()
         {
             $getOut = [];

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ProduksChange extends Migration
+class PatchProduks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class ProduksChange extends Migration
     public function up()
     {
         Schema::table('produks', function (Blueprint $table) {
-            $table->string('foto',50)->change();
+            $table->enum('unggulan',['true','false']);
         });
     }
 
@@ -25,7 +25,7 @@ class ProduksChange extends Migration
     public function down()
     {
         Schema::table('produks', function (Blueprint $table) {
-            $table->string('foto',35)->change();
+            $table->dropColoumn('unggulan');
         });
     }
 }

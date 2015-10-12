@@ -18,6 +18,11 @@ class IndexController extends Controller
     		$l = array_dot($l);
     		$data = array_merge_recursive($data,[$l]);
     	}
-    	return $this->view('public.awal',compact('data'));
+    	return $this->view('umum.awal',compact('data'));
+    }
+    public function profil($id)
+    {
+        $unitUsaha = UnitUsaha::find($id);
+        return $this->view('umum.profil',compact('unitUsaha'));
     }
 }

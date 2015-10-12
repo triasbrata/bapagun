@@ -23,6 +23,9 @@ Route::group(['prefix'=>'admin','middleware'=>'UAC:admin','namespace'=>'Admin'],
 Route::group(['namespace'=>'Umum'],function ()
 {
 	Route::get('/',['as'=>'umum.awal','uses'=>'IndexController@awal']);
+	Route::get('/',['as'=>'umum.grafik','uses'=>'IndexController@awal']);
+	Route::get('/',['as'=>'umum.about_us','uses'=>'IndexController@awal']);
 	Route::post('/',['as'=>'umum.cari','uses'=>'IndexController@cari']);
+	Route::post('/',['as'=>'umum.blog','uses'=>'IndexController@cari']);
 	Route::get('/profil/{id}',['as'=>'umum.profil','uses'=>'IndexController@profil']);
 });

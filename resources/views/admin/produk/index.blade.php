@@ -98,7 +98,15 @@
 										<td class="valing"><img src="{{ asset('imgs/produk/'.$produk->foto) }}" width="50px" class="produk"></td>
 										<td class="valing">{{$produk->nama}}</td>
 										<td class="valing">{{ $produk->keterangan }}</td>
-										<td>aksi</td>
+										<td>
+											<button class="btn btn-warning {{ $produk->unggulan ? 'unlike' : 'like' }}like" title="Produk Unggulan">
+												@if($produk->unggulan == 'true')
+												<i class="fa fa-star"></i>
+												@else
+												<i class="fa fa-star-o"></i>
+												@endif
+											</button>
+										</td>
 									</tr>
 									@endforeach
 								@endforeach
@@ -125,6 +133,24 @@
 @stop
 @section('javascript')
 <script>
+	var window.toastr.options = {
+				  "closeButton": false,
+				  "debug": false,
+				  "newestOnTop": true,
+				  "progressBar": true,
+				  "positionClass": "toast-bottom-left",
+				  "preventDuplicates": false,
+				  "onclick": null,
+				  "showDuration": "300",
+				  "hideDuration": "1000",
+				  "timeOut": "5000",
+				  "extendedTimeOut": "1000",
+				  "showEasing": "swing",
+				  "hideEasing": "swing",
+				  "showMethod": "slideDown",
+				  "hideMethod": "slideUp"
+				};
+		toastr.options = window.toastr.options;
 	$(document).on('click','.btn-add',function  () {
 		$("#form-upload").slideDown(400);
 	})
@@ -159,6 +185,18 @@
 			}
 		})		
 	}
+	$(document).on('click','.like,.unlike',function  () {
+
+		toastr.options = window.toastr.options;
+		var $this = $(this),
+			idProduk = $this.parents('tr').attr('data-produk');
+		$data = $this.hasClass('unlike') ? 'false' : 'true';
+		$.post('{{ route("admin.produk.patch") }}', {_method: 'PATCH',_token:{{ csrf_token() }},unggulan:$data}, function(data, textStatus, xhr) {
+			toastr.success(data.message,'');
+		},'json').error(function  (data) {
+			toastr.error(data.message,'');
+		});
+	})
 	$(document).on('click','.btn-view',function (e) {
 		listProduk(this);
 	})
@@ -168,23 +206,7 @@
 		$('#modal').modal()
 	})
 	$(document).on('keypress','.submit-enter',function  (e) {
-		toastr.options = {
-				  "closeButton": false,
-				  "debug": false,
-				  "newestOnTop": true,
-				  "progressBar": true,
-				  "positionClass": "toast-bottom-left",
-				  "preventDuplicates": false,
-				  "onclick": null,
-				  "showDuration": "300",
-				  "hideDuration": "1000",
-				  "timeOut": "5000",
-				  "extendedTimeOut": "1000",
-				  "showEasing": "swing",
-				  "hideEasing": "swing",
-				  "showMethod": "slideDown",
-				  "hideMethod": "slideUp"
-				};
+		toastr.options = window.toastr.options;
 		var root = $(this).parents('tr');
 		if(e.keyCode == 13){
 			$.ajax({
@@ -211,23 +233,7 @@
 		}
 	})
 	$(document).on('click','.delete',function  (e) {
-		toastr.options = {
-				  "closeButton": false,
-				  "debug": false,
-				  "newestOnTop": true,
-				  "progressBar": true,
-				  "positionClass": "toast-bottom-left",
-				  "preventDuplicates": false,
-				  "onclick": null,
-				  "showDuration": "300",
-				  "hideDuration": "1000",
-				  "timeOut": "5000",
-				  "extendedTimeOut": "1000",
-				  "showEasing": "swing",
-				  "hideEasing": "swing",
-				  "showMethod": "slideDown",
-				  "hideMethod": "slideUp"
-				};
+		toastr.options = window.toastr.options;
 		var root = $(this).parents('tr');
 			$.ajax({
 				url: '/admin/produk/'+root.find('[name="unit_usaha_id"]').val(),
@@ -250,23 +256,6 @@
 				}
 			});
 	})
-	toastr.options = {
-			  "closeButton": false,
-			  "debug": false,
-			  "newestOnTop": true,
-			  "progressBar": true,
-			  "positionClass": "toast-bottom-left",
-			  "preventDuplicates": false,
-			  "onclick": null,
-			  "showDuration": "300",
-			  "hideDuration": "1000",
-			  "timeOut": "5000",
-			  "extendedTimeOut": "1000",
-			  "showEasing": "swing",
-			  "hideEasing": "swing",
-			  "showMethod": "slideDown",
-			  "hideMethod": "slideUp"
-			};
 Dropzone.options.uploadBox = {
 	// uploadMultiple : false,
 	
