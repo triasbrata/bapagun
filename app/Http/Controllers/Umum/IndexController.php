@@ -15,9 +15,11 @@ class IndexController extends Controller
     {
     	$data = [];
     	foreach ($m->LastReport() as $l ) {
-    		$l['kondisi']= $l['kondisi'][0];
-    		$l = array_dot($l);
-    		$data = array_merge_recursive($data,[$l]);
+            if(isset($l['kondisi'][0])){
+        		$l['kondisi']= $l['kondisi'][0];
+        		$l = array_dot($l);
+        		$data = array_merge_recursive($data,[$l]);
+            }
         }
         $dataProdukUnggulan = Produk::ofUnggulan('true')->get();
     	return $this->view('umum.awal',compact('data','dataProdukUnggulan'));

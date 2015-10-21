@@ -36,15 +36,16 @@ class ProdukRequest extends Request
                 'unggulan'=>'required'
             ];
         }
-        if(Route::currentRouteName() == 'admin.produk.post'){
+        if(Route::currentRouteName() == 'admin.produk.store'){
             return [
                 'foto'=>'required|image|mimes:png,jpeg,jpg,jpe,gif,bmp'
             ];
+        }else{
+            return [
+                    'nama'=>'required|min:3',
+                    'keterangan'=>'min:5'
+            ];
         }
-        return [
-                'nama'=>'required|min:3',
-                'keterangan'=>'min:5'
-        ];
     }
     public function messages()
     {

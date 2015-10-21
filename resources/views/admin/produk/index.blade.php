@@ -282,12 +282,16 @@ Dropzone.options.uploadBox = {
 	maxFilesize: 1,
 	acceptedFiles: "image/*",
 	success:function(send,result) {
+		toastr.options = window.msg;
 		toastr.success(result.message,'')
 	},
 	error:function(send,result) {
-		if(result.message !== undefined ){
-			toastr.error(result.message,'')
-		}else if(result.foto !== undefined ){
+		toastr.options = window.msg;
+		if(result.message != undefined ){
+			$.each(result.message, function(name, msg) {
+				 toastr.error(msg,'')
+			});
+		}else if(result.foto != undefined ){
 			$.each(result.foto, function(index, val) {
 				toastr.error(val,'')
 			});
