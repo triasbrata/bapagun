@@ -39,7 +39,7 @@ class ProdukController extends Controller
 		if(! starts_with($file->getMimeType(),'image/') ){
 			return response(['message'=>"Jenis foto tidak dikenali"],404);	
 		}
-		$filename = md5(date('Y-mm-dd : h:i:s')).".{$file->guessExtension()}";
+		$filename = md5(date('Y-mm-dd : h:i:s')).uniqid().".{$file->guessExtension()}";
 		if($file->move($this->path,$filename)){
 			$unitUsaha = UnitUsaha::find($r->input('unit_usaha_id'));
 			$produk = new Produk(['foto'=>$filename,'unggulan'=>'false']);
@@ -81,7 +81,7 @@ class ProdukController extends Controller
 	public function destroy(UnitUsaha $m,Request $r)
 	{	
 		$produk = Produk::find($r->input('id'));
-		if(File::delete($this->path.$produk)){
+		if(File::delete($this->path.$produk->foto)){
 			if($produk->delete()){
 				return response(['message'=>'Produk berhasil dihapus'],200);
 			}
