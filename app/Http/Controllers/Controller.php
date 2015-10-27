@@ -107,19 +107,19 @@ abstract class Controller extends BaseController
     public function index()
     {
         $lists = $this->model->all();
-        $namaForm =  "Keseluruhan Data <b>{$this->moduleName}</b>";
-        return $this->view($this->nameFix('index'), compact('lists', 'namaForm'))->with($this->nameFix());
+        $page_title =  "Keseluruhan Data <b>{$this->moduleName}</b>";
+        return $this->view($this->nameFix('index'), compact('lists', 'page_title'))->with($this->nameFix());
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return Response
-     */
+     **/
     public function create()
     {
-        $namaForm = "Tambah <b>{$this->moduleName}</b>";
+        $page_title = "Tambah <b>{$this->moduleName}</b>";
         $form = $this->prefix.'.form';
-        return $this->view($this->nameFix('create'), compact('namaForm', 'form'))->with($this->nameFix());
+        return $this->view($this->nameFix('create'), compact('page_title', 'form'))->with($this->nameFix());
     }
 
     /**
@@ -131,8 +131,8 @@ abstract class Controller extends BaseController
     public function show($data)
     {
 
-        $namaForm = "Deskripsi Data <b>{$this->moduleName}</b>";
-        return view($this->prefix.'.show', compact('data','namaForm'))->with($this->nameFix());
+        $page_title = "Deskripsi Data <b>{$this->moduleName}</b>";
+        return view($this->prefix.'.show', compact('data','page_title'))->with($this->nameFix());
     }
 
     /**
@@ -143,8 +143,8 @@ abstract class Controller extends BaseController
      */
     public function edit(EloquentModel $data)
     {
-        $namaForm = "Perbarui <b>{$this->moduleName}</b>";
+        $page_title = "Perbarui <b>{$this->moduleName}</b>";
         $form = "{$this->prefix}.form";
-        return view("{$this->prefix}.edit", compact('data', 'namaForm', 'form'))->with($this->nameFix());
+        return view("{$this->prefix}.edit", compact('data', 'page_title', 'form'))->with($this->nameFix());
     }
 }

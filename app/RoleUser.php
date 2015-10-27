@@ -5,7 +5,7 @@ use Auth;
 class RoleUser 
 {
 	protected $user;
-	function __construct($function=null) {
+	function __construct() {
 		$this->user = Auth::user();
 	}
     public function redirectLanding()
@@ -14,7 +14,7 @@ class RoleUser
     }
     public function redirect($route)
     {
-    	return redirect()->route("{$this->user->level}.$route");
+    	return redirect()->route("admin.{$this->user->level}.$route");
     }
 
 }

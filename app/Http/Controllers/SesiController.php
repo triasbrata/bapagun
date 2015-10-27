@@ -7,13 +7,14 @@ use App\User;
 use App\Http\Requests\SesiControllerRequest;
 use Auth;
 use Cache;
+use App\RoleUser;
 use Session;
 
 class SesiController extends Controller
 {
-    public function redirectByLevel($level)
-    {
-        return redirect()->route("$level.landing");
+    private $roleUser;
+    function __construct(RoleUser $role) {
+        $this->roleUser = $role;
     }
     /**
      * make login view
@@ -35,7 +36,7 @@ class SesiController extends Controller
         if (! is_null($user)) {
             Auth::login($user);
             $level = Auth::user()->level;
-            return $this->redirectByLevel($level);
+            return redirect()->route("admin.$level.landing");
         }else{
             return redirect()->back()->withInput()->withErrors("Username dan password tidak terdaftar");
         }

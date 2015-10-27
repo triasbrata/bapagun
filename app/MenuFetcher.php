@@ -13,18 +13,24 @@ class MenuFetcher
 	public function lists($level)
 	{
 		$menu = [
-			'admin'=>[
-					[ 'route'=>'landing', 'name'=>'Dashboard Admin', 'icon'=> 'fa fa-home'],
-					[ 'route'=>'unitkegiatan.index', 'name'=>'Unit Kegiatan', 'icon'=> 'fa fa-database'],
-					[ 'route'=>'kondisiusaha.index', 'name'=>'Kondisi Usaha', 'icon'=> 'fa fa-line-chart'],
-					[ 'route'=>'produk.index', 'name'=>'Produk Usaha', 'icon'=> 'fa fa-shopping-cart'],
-					[ 'route'=>'data.', 'name'=>'Data Utama', 'icon'=> 'fa fa-tags','inGroup'=>[
-						[ 'route'=>'tujuan_pemasaran.index', 'name'=>'Tujuan Pemasaran', 'icon'=> 'fa fa-tag'],
-						[ 'route'=>'tempat_pemasaran.index', 'name'=>'Tempat Pemasaran', 'icon'=> 'fa fa-tag'],
-						[ 'route'=>'bahan_baku.index', 'name'=>'Bahan Baku', 'icon'=> 'fa fa-tag'],
-						[ 'route'=>'permodalan.index', 'name'=>'Permodalan', 'icon'=> 'fa fa-tag'],
-						[ 'route'=>'manajement.index', 'name'=>'Manajement', 'icon'=> 'fa fa-tag'],
-					]],
+			'kabupaten'=>[
+					[ 'route'=>'kabupaten.instansi.index', 'name'=>'Data  Instansi ', 'icon'=> 'fa fa-building-o'],
+					[ 'route'=>'kabupaten.bantuan.index', 'name'=>'Data Bantuan  ', 'icon'=> 'fa fa-cubes'],
+					[ 'route'=>'kabupaten.kriteria.index', 'name'=>'Data Kriteria  ', 'icon'=> 'fa fa-tag'],
+					[ 'route'=>'kabupaten.indikator.index', 'name'=>'Data Indikator  ', 'icon'=> 'fa fa-star'],
+					[ 'route'=>'kabupaten.region.', 'name'=>'Data Region  ', 'icon'=> 'fa fa-globe',
+						'inGroup'=>[
+							[ 'route'=>'provinsi.index', 'name'=>'Data Provinsi  ', 'icon'=> 'fa fa-map-marker'],
+							[ 'route'=>'kabupaten.index', 'name'=>'Data Kabupaten  ', 'icon'=> 'fa fa-map-marker'],
+							[ 'route'=>'kecamatan.index', 'name'=>'Data Kecamatan  ', 'icon'=> 'fa fa-map-marker'],
+							[ 'route'=>'desa.index', 'name'=>'Data Desa  ', 'icon'=> 'fa fa-map-marker'],
+						]
+					],
+			],
+			'kecamatan'=>[
+					[ 'route'=>'kecamatan.penduduk.index', 'name'=>'Data Penduduk ', 'icon'=> 'fa fa-users'],
+					[ 'route'=>'kecamatan.penerima.index', 'name'=>'Data Calon Penerima Bantuan  ', 'icon'=> 'fa fa-cube'],
+					[ 'route'=>'kecamatan.generate.index', 'name'=>'Generate Data Penerima', 'icon'=> 'fa fa-cube'],
 			]
 		];
 		return $menu[$level];
@@ -39,10 +45,10 @@ class MenuFetcher
 					$inGroup = $list['inGroup'];
 					unset($list['inGroup']);
 					$active  = in_array( $list['route'],explode( '.',Route::currentRouteName() ) ) ? 'active expand':'';
-					$icon = isset($list['icon']) ? "<div class='gui-icon'><i class='{$list['icon']}'></i></div>" : ""; 
-					$o.="<li class = 'gui-folder $active'>";
-						$o.="<a>$icon<span class='title'>{$list['name']}</span></a>";
-						$o.="<ul>";
+					$icon = isset($list['icon']) ? "<i class='{$list['icon']}'></i> " : ""; 
+					$o.="<li class = 'treeview $active'>";
+						$o.="<a href='#'>$icon<span class='title'>{$list['name']}</span></a>";
+						$o.="<ul class='treeview-menu'>";
 						$oldPrefix = $prefix;
 						$prefix = (!is_null($prefix)) ? $prefix.'.'.$list['route'] : $list['route'];
 						$o.=$this->make($inGroup,$role,$prefix,true);
@@ -54,15 +60,13 @@ class MenuFetcher
 					$routeName.= !is_null($prefix) ? ".$prefix":".";
 					$routeName.= "{$list['route']}";
 					$link = route($routeName);
-					$o.="<li><a href='$link' >";
 					if($child){
-						$ic= isset($list['icon']) ? "<i class='{$list['icon']}'></i>" : ""; 
-						$o.="<span class='title'>$ic {$list['name']}</span>";
+						$o.="<li style='padding-left:5px;'><a href='$link' >";
 					}else{
-						$ic= isset($list['icon']) ? "<div class='gui-icon'><i class='{$list['icon']}'></i></div>" : ""; 
-						$o.="$ic<span class='title'> {$list['name']}</span>";
-
+						$o.="<li><a href='$link' >";
 					}
+						$ic= isset($list['icon']) ? "<i class='{$list['icon']}'></i>" : ""; 
+						$o.="$ic <span class='title'> {$list['name']}</span>";
 					$o.="</a></li>";
 				}
 			}

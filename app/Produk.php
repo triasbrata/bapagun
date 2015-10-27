@@ -15,4 +15,8 @@ class Produk extends Model
     	{
     		return $q->whereUnggulan($unggulan);
     	}
+    	public function kategori()
+    	{
+    		return $this->belongsTo(SubKategoriProduk::class,'kategori_id');
+    	}
 }

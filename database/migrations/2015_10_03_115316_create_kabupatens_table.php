@@ -13,11 +13,10 @@ class CreateKabupatensTable extends Migration
     public function up()
     {
         Schema::create('kabupatens', function (Blueprint $table) {
-             $table->string('id',10);
-            $table->string('provinsi_id',10);
+            $table->increments('id');
+            $table->integer('provinsi_id')->unsigned()->index();
             $table->foreign('provinsi_id')->references('id')->on('provinsis')->onUpdate('cascade')->onDelete('cascade');
             $table->string('label');
-            $table->primary('id');
             $table->timestamps();
         });
     }

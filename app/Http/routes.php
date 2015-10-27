@@ -1,31 +1,64 @@
 <?php
 include 'routes.default.php';
 include 'routes.model.php';
-Route::group(['prefix'=>'admin','middleware'=>'UAC:admin','namespace'=>'Admin'],function ()
+include 'routes.public.php';
+Route::group(['prefix'=>'admin/kabupaten','middleware'=>'UAC:kabupaten','namespace'=>'Admin\Kabupaten'],function ()
 {
-	Route::get('/',['as'=>'admin.landing','uses'=>'AdminController@landing']);
-	Route::resources([
-			'unitkegiatan'=>'UnitKegiatanController',
-			'kondisiusaha'=>'KondisiUsahaController',
-			'produk'=>'ProdukController',
-	]);
-	Route::group(['prefix'=>'data','namespace'=>'Data'],function ()
+	Route::get('/',['as'=>'admin.kabupaten.landing','uses'=>function ()
 	{
-		Route::resources([
-			'tujuan_pemasaran'=>'TujuanPemasaranController',
-			'tempat_pemasaran'=>'TempatPemasaranController',
-			'bahan_baku'=>'BahanBakuController',
-			'permodalan'=>'PermodalanController',
-			'manajement'=>'ManajementController'
+		return view('admin_template');
+	}]);
+	Route::resources([
+			'instansi'=>'InstansiController',
+			'bantuan'=>'BantuanController',
+			'kriteria'=>'KriteriaController',
+			'indikator'=>'IndikatorController',
 		]);
+	Route::group(['prefix'=>'region','namespace'=>'Region'],function ()
+	{
+		Route::get('/',function ()
+		{
+			return redirect()->url('admin/kabupaten');
+		});
+		Route::resources([
+			'provinsi'=>'ProvinsiController',
+			'kabupaten'=>'KabupatenController',
+			'kecamatan'=>'KecamatanController',
+			'desa'=>'DesaController',
+		]);
+		Route::get('get/{region}/{id}',['as'=>'getRegion','uses'=>function ($r,$id)
+				{
+					$data = [];
+					if($r == 'kabupaten'){
+			    		foreach ( \App\Kabupaten::where('provinsi_id',$id)->get() as $list){
+			    			$data =array_merge_recursive($data,[['id'=>$list->id,'text'=>$list->label]]);
+			    		}
+			    	}
+			    	if($r == 'kecamatan'){
+			    		foreach ( \App\Kecamatan::where('kabupaten_id',$id)->get() as $list){
+			    			$data =array_merge_recursive($data,[['id'=>$list->id,'text'=>$list->label]]);
+			    		}
+			    	}
+			    	if($r == 'desa'){
+			    		foreach ( \App\Desa::where('kecamatan_id',$id)->get() as $list){
+			    			$data =array_merge_recursive($data,[['id'=>$list->id,'text'=>$list->label]]);
+			    		}
+			    	}
+			    	return $data;
+				}]);
 	});
 });
-Route::group(['namespace'=>'Umum'],function ()
+Route::group(['prefix'=>'admin/kecamatan','middleware'=>'UAC:kecamatan','namespace'=>'Admin\Kecamatan'],function ()
 {
-	Route::get('/',['as'=>'umum.awal','uses'=>'IndexController@awal']);
-	Route::get('/',['as'=>'umum.grafik','uses'=>'IndexController@awal']);
-	Route::get('/',['as'=>'umum.about_us','uses'=>'IndexController@awal']);
-	Route::post('/',['as'=>'umum.cari','uses'=>'IndexController@cari']);
-	Route::post('/',['as'=>'umum.blog','uses'=>'IndexController@cari']);
-	Route::get('/profil/{id}',['as'=>'umum.profil','uses'=>'IndexController@profil']);
+	Route::get('/',['as'=>'admin.kecamatan.landing','uses'=>function ()
+	{
+		return view('admin_template');
+	}]);
+	Route::get('get_bantuan',['as'=>'getBantuan','uses'=>'PenerimaBantuanController@getBantuan']);
+	Route::get('get_kriteria',['as'=>'getKI','uses'=>'PenerimaBantuanController@getKI']);
+	Route::resources([
+		'penduduk'=>'PendudukController',
+		'penerima'=>'PenerimaBantuanController',
+		'generate'=>'GeneratorController',
+		]);
 });

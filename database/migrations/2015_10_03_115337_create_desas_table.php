@@ -13,11 +13,10 @@ class CreateDesasTable extends Migration
     public function up()
     {
         Schema::create('desas', function (Blueprint $table) {
-            $table->string('id',10);
-            $table->string('kecamatan_id',10);
+            $table->increments('id');
+            $table->integer('kecamatan_id')->unsigned()->index();
             $table->foreign('kecamatan_id')->references('id')->on('kecamatans')->onUpdate('cascade')->onDelete('cascade');
             $table->string('label');
-            $table->primary('id');
             $table->timestamps();
         });
     }
