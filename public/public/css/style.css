@@ -1,0 +1,43 @@
+.navbar-red {
+  background: #D9534F;
+}
+
+.btn-red {
+  background: #D9534F;
+}
+
+@media(min-width: 1280px){
+	.vline{
+		margin-top: 10px;
+		border-right: 3px solid #D9534F;
+	}
+}
+@media(max-width:768px){
+	.wrapper{
+		padding-top: 49px;
+	}
+}
+
+.ahover {
+color:#fff;
+}
+
+.footers{
+	color:white; 
+	padding-top:20px;
+
+}
+.hovers {
+	color: #FFF;
+	background-color: #CE3E3A;
+}
+.navbar-red{
+		border-width: 0;
+		
+}
+.nav.navbar-nav.navbar-right li a{
+	color: #e7e7e7;
+}
+.nav.navbar-nav.navbar-right li.active a{
+	color:#CE3E3A;
+}
