@@ -1,5 +1,5 @@
-@inject('bantuan','App\Bantuan');
-@inject('generate','App\Generate');
+@inject('bantuan','App\Bantuan')
+@inject('generate','App\Generate')
 <html>
 
 <head>
